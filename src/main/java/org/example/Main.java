@@ -74,5 +74,17 @@ public class Main {
         } catch(Exception e) {
             System.out.println("Error saving data");
         }
+    }    static void showProperties() {
+        if(properties.size() == 0) {
+            System.out.println("No properties available");
+            return;
+        }
+
+        for(int i = 0; i < properties.size(); i++) {
+            Property p = properties.get(i);
+            System.out.printf("\nID: %s\nTitle: %s\nType: %s\nAddress: %s\nPrice: %.2f\n",
+                    p.id, p.title, p.type, p.address, p.price);
+        }
     }
+
 }
