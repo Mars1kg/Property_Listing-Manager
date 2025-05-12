@@ -1,7 +1,7 @@
-import java.io.*;
-import java.util.*;
+import java.io.*; // работы с файлами.
+import java.util.*; // arraylist, scanner.
 
-class Property {
+class Property { // класс для описания объекта недвижимости
     String id;
     String title;
     String type;
@@ -10,14 +10,14 @@ class Property {
 }
 
 public class Main {
-    static ArrayList<Property> properties = new ArrayList<Property>();
-    static String file = "properties.txt";
+    static ArrayList<Property> properties = new ArrayList<Property>(); // создаём список объектов типа Property.
+    static String file = "properties.txt"; //переменная чтобы сохранять данные в файл и загружать их обратно
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        loadFromFile();
+        loadFromFile(); //Вызов метода загрузки данных из файла
 
-        while(true) {
+        while(true) { //бесконечный цикл
             System.out.println("\n1. Добавить");
             System.out.println("2. Показать все");
             System.out.println("3. Изменить");
@@ -53,25 +53,27 @@ public class Main {
         }
     }
 
-    static void loadFromFile() {
+        static void loadFromFile() {
         try {
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            String line;
-            while((line = br.readLine()) != null) {
-                String[] parts = line.split(",");
-                Property p = new Property();
-                p.id = parts[0];
+            Scanner scanner = new Scanner(new File(file)); // Открываем файл для чтения
+            while(scanner.hasNextLine()) { // Пока есть строки в файле
+                String line = scanner.nextLine(); // Считываем строку
+                String[] parts = line.split(","); // Разделяем строку на части по запятой
+                Property p = new Property(); // Создаём новый объект Property
+                p.id = parts[0]; // Присваиваем значения
                 p.title = parts[1];
                 p.type = parts[2];
                 p.address = parts[3];
                 p.price = Double.parseDouble(parts[4]);
-                properties.add(p);
+                properties.add(p); // Добавляем объект в список
             }
-            br.close();
-        } catch(Exception e) {
+            scanner.close(); // Закрываем Scanner
+        }catch (Exception e) {
             System.out.println("Файл не найден, начнем с чистого листа");
         }
     }
+
+
 
     static void saveToFile() {
         try {
@@ -113,17 +115,17 @@ public class Main {
         System.out.print("Адрес: ");
         p.address = sc.nextLine();
 
-        System.out.print("Цена: ");
-        while(true) {
-            try {
-                p.price = sc.nextDouble();
-                if(p.price > 0) break;
-                System.out.print("Цена должна быть больше 0. Введите снова: ");
-            } catch(Exception e) {
-                System.out.print("Ошибка! Введите число: ");
-                sc.next();
+        System.out.print("Цена в долларах: ");
+            while(true) { // цена недвижимости правильно/неправильно
+                try {
+                    p.price = sc.nextDouble();
+                    if(p.price > 0) break;
+                    System.out.print("Цена должна быть больше 0. Введите снова: ");
+                } catch(Exception e) {
+                    System.out.print("Ошибка! Введите число: ");
+                    sc.next();
+                }
             }
-        }
         sc.nextLine();
 
         properties.add(p);
@@ -132,7 +134,7 @@ public class Main {
     }
 
     static void showAll() {
-        if(properties.size() == 0) {
+        if(properties.size() == 0) { //если файл пустой то выводится надпись: Список пуст.
             System.out.println("Список пуст");
             return;
         }
@@ -143,7 +145,7 @@ public class Main {
             System.out.println("Название: " + p.title);
             System.out.println("Тип: " + p.type);
             System.out.println("Адрес: " + p.address);
-            System.out.println("Цена: " + p.price);
+            System.out.println("Цена в долларах: " + p.price);
         }
     }
 
@@ -196,7 +198,7 @@ public class Main {
         boolean found = false;
 
         for(int i = 0; i < properties.size(); i++) {
-            if(properties.get(i).id.equals(id)) {
+            if (properties.get(i).id.trim().equals(id.trim())) {
                 properties.remove(i);
                 saveToFile();
                 System.out.println("Удалено");
@@ -215,14 +217,14 @@ public class Main {
         int rentCount = 0;
 
         for(int i = 0; i < properties.size(); i++) {
-            if(properties.get(i).type.equals("sale")) {
+            if(properties.get(i).type.equalsIgnoreCase("продажа")) {
                 saleCount++;
-            } else if(properties.get(i).type.equals("rent")) {
+            } else if(properties.get(i).type.equalsIgnoreCase("аренда")) {
                 rentCount++;
             }
         }
 
-        System.out.println("\nВсего объектов: " + properties.size());5
+        System.out.println("\nВсего объектов: " + properties.size());
         System.out.println("На продажу: " + saleCount);
         System.out.println("В аренду: " + rentCount);
     }
