@@ -105,5 +105,5 @@ properties.txt: Used to store property data persistently. This file is read at a
 
 
 Screenshots:
-![1](https://github.com/Mars1kg/Property_Listing-Manager/blob/master/1.1.png
+![1](https://github.com/Mars1kg/Property_Listing-Manager/blob/master/1.1.png)
         
