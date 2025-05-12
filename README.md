@@ -10,49 +10,51 @@ The Property Listing Manager is a Java-based application designed to manage prop
 
 Objectives:
 
-Efficiently manage property listings (sale and rental).
+1. Efficiently manage property listings (sale and rental).
 
-Store property data in a text file for easy access and persistence.
+2. Store property data in a text file for easy access and persistence.
 
-Allow users to add new properties with unique IDs.
+3. Allow users to add new properties with unique IDs.
 
-Enable updates to existing property information.
+4. Enable updates to existing property information.
 
-Provide functionality to delete property records by ID.
+5. Provide functionality to delete property records by ID.
 
-Display all property listings in a user-friendly format.
+6. Display all property listings in a user-friendly format.
 
-Show statistics about the number of properties for sale and for rent.
+7. Show statistics about the number of properties for sale and for rent.
 
-Ensure data is consistently saved and loaded from a text file.
+8. Ensure data is consistently saved and loaded from a text file.
 
-Validate user input to prevent errors and maintain data integrity.
+9. Validate user input to prevent errors and maintain data integrity.
 
-Handle exceptions gracefully to prevent application crashes.
+10. Handle exceptions gracefully to prevent application crashes.
 
-Project Requirement List:
+    
 
-Add new property listings with unique IDs.
+    Project Requirement List:
 
-Display all property listings.
+1. Add new property listings with unique IDs.
 
-Modify existing property information.
+2. Display all property listings.
 
-Delete property listings by ID.
+3. Modify existing property information.
 
-Show statistics for properties for sale and for rent.
+4. Delete property listings by ID.
 
-Load data from a text file at startup.
+5. Show statistics for properties for sale and for rent.
 
-Save data to a text file after every modification.
+6. Load data from a text file at startup.
 
-Validate price inputs to be greater than zero.
+7. Save data to a text file after every modification.
 
-Prevent duplicate IDs when adding new properties.
+8. Validate price inputs to be greater than zero.
 
-Gracefully handle exceptions during file operations and user input.
+9. Prevent duplicate IDs when adding new properties.
 
-Documentation:
+10. Gracefully handle exceptions during file operations and user input.
+
+    Documentation:
 
 The application uses the following main components:
 
