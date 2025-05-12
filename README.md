@@ -102,3 +102,8 @@ Input validation is performed to prevent incorrect entries.
 Files:
 
 properties.txt: Used to store property data persistently. This file is read at application startup and updated after every modification.
+
+
+Screenshots:
+![1](https://github.com/Mars1kg/Property_Listing-Manager/blob/master/1.1.png
+        
