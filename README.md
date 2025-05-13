@@ -1,14 +1,14 @@
-Property_Listing-Manager
+# Property_Listing-Manager
 
-Student: Zhyldyzbekov Sultan 
+## Student: Zhyldyzbekov Sultan 
 
 
 
-Description:
+## Description:
 
 The Property Listing Manager is a Java-based application designed to manage property listings efficiently. It allows users to add, view, update, delete, and analyze property listings such as rentals and sales. All data is stored in a text file for persistence, making it easy to manage property records seamlessly.
 
-Objectives:
+## Objectives:
 
 1. Efficiently manage property listings (sale and rental).
 
@@ -32,7 +32,7 @@ Objectives:
 
     
 
-    Project Requirement List:
+## Project Requirement List:
 
 1. Add new property listings with unique IDs.
 
@@ -53,8 +53,9 @@ Objectives:
 9. Prevent duplicate IDs when adding new properties.
 
 10. Gracefully handle exceptions during file operations and user input.
+    
 
-    Documentation:
+## Documentation:
 
 The application uses the following main components:
 
@@ -89,7 +90,7 @@ stats(): Displays statistics of properties available for sale and rent.
 Uses try-catch blocks to handle exceptions like FileNotFoundException and InputMismatchException.
 
 
-Code:
+## Code:
 
 The code is structured with modular functions for each action.
 
@@ -99,12 +100,12 @@ Uses meaningful variable names and consistent formatting.
 
 Input validation is performed to prevent incorrect entries.
 
-Files:
+## Files:
 
 properties.txt: Used to store property data persistently. This file is read at application startup and updated after every modification.
 
 
-Screenshots:
+## Screenshots:
 ![1](https://github.com/Mars1kg/Property_Listing-Manager/blob/master/1.1.png)
 ![1](https://github.com/Mars1kg/Property_Listing-Manager/blob/master/1.2.png)
 ![1](https://github.com/Mars1kg/Property_Listing-Manager/blob/master/1.3.png)
