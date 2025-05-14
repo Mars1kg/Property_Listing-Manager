@@ -12,9 +12,9 @@ The Property Listing Manager is a Java-based application designed to manage prop
 
 #### 1. Efficiently manage property listings (sale and rental).
 
-# 2. Store property data in a text file for easy access and persistence.
+ 2. Store property data in a text file for easy access and persistence.
 
-# 3. Allow users to add new properties with unique IDs.
+### 3. Allow users to add new properties with unique IDs.
 
 # 4. Enable updates to existing property information.
 
